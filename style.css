@@ -1,0 +1,128 @@
+/* --- 90℃ Hero Section --- */
+
+/* 1. 外箱：画面全体と配置のルール */
+/* --- 90℃ Hero Section (画像追加版) --- */
+.hero-90 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    /* 画像の設定を追加 */
+    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url("hero.jpg"); 
+    background-size: cover;       /* 画面いっぱいに広げる */
+    background-position: center;  /* 中央に配置 */
+/* ★この一行を追加！★ */
+    background-attachment: fixed; /* 背景画像を画面に固定する */
+}
+
+/* 2. 真ん中のコンテンツ箱 */
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.brand-logo {
+    font-family: "serif";
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.catchphrase {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    color: #666;
+}
+
+/* 3. アクセント：右下の「SCROLL」 */
+/* HTMLのクラス名に合わせて .scroll-indicator に統一しました */
+.scroll-indicator {
+    position: absolute;  /* 親箱を基準に浮かせる */
+    bottom: 40px;        /* 下からの距離 */
+    right: 40px;         /* 右からの距離 */
+    writing-mode: vertical-rl; /* 縦書き */
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #999;
+}
+
+.brand-logo, .catchphrase {
+    /* ほとんど見えないくらいの白い光を背負わせることで、背景から浮き立たせます */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* --- 90℃ Concept Section (世界観統一版) --- */
+
+.concept {
+  width: 100%;
+  min-height: 100vh; /* 画面いっぱいに広げる */
+  padding: 120px 0;
+  
+  /* 画像を背景として画面いっぱいに表示する設定 */
+  background-image: url("concept-image2.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center; /* 上下中央揃え */
+}
+
+.concept-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  
+  /* 中身の要素（テキストの箱）を右端に寄せる */
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 右側のスペースに収まるテキストの箱 */
+.concept-body {
+  width: 100%;
+  max-width: 500px; /* 写真に文字が被らないように横幅を制限 */
+}
+
+/* タイポグラフィの調整 */
+.section-title {
+  font-family: "serif";
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: #888; 
+  text-transform: uppercase; 
+  margin-bottom: 30px;
+}
+
+.concept-lead {
+  font-family: "serif";
+  font-size: 24px; 
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  color: #222; 
+  margin-bottom: 40px;
+}
+
+.concept-text {
+  font-size: 14px;
+  line-height: 2.4; 
+  letter-spacing: 0.08em;
+  color: #444;
+}
+
+/* 画像が枠線からはみ出さないようにし、自動で中央を正方形に切り抜く */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* これが画像を綺麗にトリミングしてくれるプロパティです */
+    object-position: center; /* 画像の中心を基準に切り抜く */
+}
