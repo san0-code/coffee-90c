@@ -126,3 +126,18 @@
     object-fit: cover; /* これが画像を綺麗にトリミングしてくれるプロパティです */
     object-position: center; /* 画像の中心を基準に切り抜く */
 }
+
+/* --- スマホサイズ（画面幅768px以下）のときだけの調整 --- */
+@media (max-width: 768px) {
+    .hero-90 {
+        /* スマホの不具合を回避するため、固定を解除して通常に戻す */
+        background-attachment: scroll !important;
+        
+        /* スマホ画面に合わせて文字の大きさを少し調整（見やすくなります） */
+        height: 100vh; 
+    }
+    
+    .brand-logo {
+        font-size: 48px; /* スマホだと80pxは大きすぎるので、少し小さく */
+    }
+}
